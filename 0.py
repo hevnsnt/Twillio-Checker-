@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-#By CalonMayat 
-#Telegram Flavyy7
-#Team: PhantomSec1337 
+#Updated 07-12-2022 hevnsnt
+#original code by
+#	By CalonMayat 
+#	Telegram Flavyy7
+#	Team: PhantomSec1337 
 
 import requests, json
 from pyfiglet import figlet_format
@@ -18,14 +20,7 @@ kuning = Fore.YELLOW
 os.system('clear')
 time.sleep(2)
 
-banner = figlet_format("Twillio Checker") 
-print (banner) 
-
-print(cyan+" [+] By : CalonMayat") 
-
-print(Style.RESET_ALL)
-
-print(cyan+" [+] Telegram: Flavyy7")
+print(figlet_format("Twillio Checker") ) 
 
 print(Style.RESET_ALL)
 time.sleep(3)
@@ -45,12 +40,13 @@ def twilio_checker(account_sid, auth_token):
 			elif msg["direction"] == "inbound-api":
 				nope = msg["to"]
 				break
-		print "Currency: "+info_balance["currency"]
-		print "Balance: "+info_balance["balance"]
-		print "Phone number: "+nope
+		print("Currency: "+info_balance["currency"])
+		print("Balance: "+info_balance["balance"])
+		print("Phone number: "+nope)
 	except Exception as err:
-		print "ERROR: Invalid credentials"
+		print("ERROR: Invalid credentials")
 
-account_sid = raw_input( merah+" Account sid: ")
-auth_token = raw_input( merah+" Auth token: ")
-twilio_checker(account_sid, auth_token)
+if __name__ == "__main__":
+	account_sid = input( merah+" Account sid: ")
+	auth_token = input( merah+" Auth token: ")
+	twilio_checker(account_sid, auth_token)
